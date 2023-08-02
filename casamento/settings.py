@@ -26,7 +26,7 @@ SECRET_KEY = 'gewhufiwjeufkrh97whuejf$%*()671892e4981hh8rjpf19'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['casamentorobertaefabio2.vercel.app']
 
 
 # Application definition
