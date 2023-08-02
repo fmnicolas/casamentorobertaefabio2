@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site em Construção</title>
+    <style>
+        #construcao {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            margin-top: 5vh;
+        }
+
+        #imagem {
+            width: 30vw;
+            height: auto;
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="construcao">Site em Construção</h1>
+    <img id="imagem" src="{% static 'images/imagem.png' %}" alt="Imagem Site em Construção">
+</body>
+</html>
