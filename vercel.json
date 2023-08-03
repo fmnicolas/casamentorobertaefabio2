@@ -2,7 +2,7 @@
 
     "builds": [{
 
-        "src": "casamentorobertaefabio2/wsgi.py",
+        "src": "casamento/wsgi.py",
 
         "use": "@vercel/python",
 
@@ -16,7 +16,7 @@
 
             "src": "/(.*)",
 
-            "dest": "casamentorobertaefabio2/wsgi.py"
+            "dest": "casamento/wsgi.py"
 
         }
 

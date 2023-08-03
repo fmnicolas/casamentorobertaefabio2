@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'gewhufiwjeufkrh97whuejf$%*()671892e4981hh8rjpf19'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['casamentorobertaefabio2.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
