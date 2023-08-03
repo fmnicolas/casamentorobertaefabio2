@@ -15,8 +15,8 @@ var mobile_menu_title = "Menu";                 //The title of the mobile menu.
 var hero_full_screen = true;                    //If true, the hero section will fit to screen size. If false, hero height will be the height of its content.
 
 //HERO BACKGROUND SLIDESHOW IMAGES
-var slidehow_images = [
-    "{% static 'images/1.png' %}"
+var slideshow_images = [
+    images/fundo.png,
 ];
 
 //TIMELINE PARALLAX
@@ -24,9 +24,9 @@ var timeline_parallax = true;                   //If false, the timeline items w
 
 
 //CONTACT FORM VARIABLES
-var contact_form_success_msg = "Form successfully submitted! :)";
-var contact_form_error_msg = "Error sending message :(";
-var contact_form_recaptcha_error_msg = "Error verifying reCaptcha!";
+var contact_form_success_msg = "Mensagem enviada com sucesso! :)";
+var contact_form_error_msg = "Erro ao enviar mensagem :(";
+var contact_form_recaptcha_error_msg = "Erro ao verificar reCaptcha!";
 
 
 //COUNTDOWN VARIABLES

@@ -66,7 +66,7 @@
 /* #Sections with background image
 ================================================== */
 #our-story-title {
-  background-image: url("{% static '/images/linhadotempo.jpg' %}");
+  background-image: url(../images/linhadotempo.jpg..);
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   #our-story-title {
@@ -75,7 +75,7 @@
 }
 
 #the-wedding {
-  background-image: url("{% static '/images/convite.jpg' %}");
+  background-image: url(../images/convite.jpg);
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   #the-wedding {
@@ -113,7 +113,7 @@
 }
 
 .page-header {
-  background-image: url("{% static '/images/convite.jpg' %}");
+  background-image: url(../images/convite.jpg);
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   .page-header {
@@ -1204,7 +1204,7 @@ p.center {
 }
 
 .pattern {
-  background-image: url("{% static '../images/neela-pattern.png' %}");
+  background-image: url(../images/neela-pattern.png);
   background-repeat: repeat;
 }
 
@@ -1718,6 +1718,7 @@ p.center {
   overflow: hidden;
   padding: 75px 0;
   z-index: 0;
+  
 }
 #hero::before {
   content: "";
@@ -2404,7 +2405,7 @@ p.center {
   right: -112px;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-large.svg' %}");
+  background-image: url(../images/flower-large.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transform: scaleX(-1) rotate(-16deg);
@@ -2613,7 +2614,7 @@ p.center {
   right: -150px;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-medium.svg' %}");
+  background-image: url(../images/flower-medium.svg);
   background-repeat: no-repeat;
 }
 .timeline .template-1::after,
@@ -2719,7 +2720,7 @@ p.center {
   left: -165px;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-medium.svg' %}");
+  background-image: url(../images/flower-medium.svg);
   background-repeat: no-repeat;
   -webkit-transform: scaleY(-1) rotate(-90deg);
   -moz-transform: scaleY(-1) rotate(-90deg);
@@ -2978,7 +2979,7 @@ p.center {
   margin-top: -212px;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-medium.svg' %}");
+  background-image: url(../images/flower-medium.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transform: rotate(45deg);
@@ -3035,7 +3036,7 @@ p.center {
   z-index: 0;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("{% static '../images/flower-small.svg' %}");
+  background-image: url(../images/flower-small.svg);
   background-size: contain;
   -khtml-opacity: 0.2;
   -moz-opacity: 0.2;
@@ -3060,7 +3061,7 @@ p.center {
   z-index: 0;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("{% static '../images/flower-small.svg' %}");
+  background-image: url(../images/flower-small.svg);
   background-size: contain;
   -khtml-opacity: 0.2;
   -moz-opacity: 0.2;
@@ -3522,7 +3523,7 @@ p.center {
   top: 50%;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-large-light.svg' %}");
+  background-image: url(../images/flower-large-light.svg);
   background-repeat: no-repeat;
   -khtml-opacity: 0.2;
   -moz-opacity: 0.2;
@@ -3562,7 +3563,7 @@ p.center {
   top: 50%;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-large.svg' %}");
+  background-image: url(../images/flower-large.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -khtml-opacity: 1;
@@ -4453,7 +4454,7 @@ section.side-flowers {
   right: -65px;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-medium.svg' %}");
+  background-image: url(../images/flower-medium.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transform: rotate(-6deg) scaleX(-1);
@@ -4702,7 +4703,7 @@ section.side-flowers {
   left: 0;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-large.svg' %}");
+  background-image: url(../images/flower-large.svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -4942,7 +4943,7 @@ section.side-flowers {
   right: -240px;
   z-index: 1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-large-dark.svg' %}");
+  background-image: url(../images/flower-large-dark.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transform: rotate(-24deg);
@@ -5145,7 +5146,7 @@ section.side-flowers {
   right: -45px;
   z-index: -1;
   background-position: center center;
-  background-image: url("{% static '../images/flower-large.svg' %}");
+  background-image: url(../images/flower-large.svg);
   background-repeat: no-repeat;
 }
 .form-wrapper.flowers::before {
@@ -5402,7 +5403,7 @@ textarea.form-control {
   z-index: -1;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("{% static '../images/flower-small.svg' %}");
+  background-image: url(../images/flower-small.svg);
   background-size: contain;
   -khtml-opacity: 0.5;
   -moz-opacity: 0.5;
@@ -5559,7 +5560,7 @@ textarea.form-control {
   width: 32px;
   height: 32px;
   margin: 0 auto;
-  background: url("{% static '../images/loading.gif' %}") no-repeat;
+  background: url(../images/loading.gif) no-repeat;
 }
 
 .lb-nav {
