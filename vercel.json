@@ -1,25 +1,26 @@
 {
-
-    "builds": [{
-
+    "version": 2,
+    "name": "casamento",
+    "builds": [
+      {
         "src": "casamento/wsgi.py",
-
-        "use": "@vercel/python",
-
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-
-    }],
-
-    "routes": [
-
-        {
-
-            "src": "/(.*)",
-
-            "dest": "casamento/wsgi.py"
-
+        "use": "@ardnt/now-python-wsgi",
+        "config": {
+          "maxLambdaSize": "30mb"
         }
-
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static",
+        "config": {
+          "distDir": "staticfiles"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "project/wsgi.py"
+      }
     ]
-
-}
+  }
