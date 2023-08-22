@@ -79,15 +79,14 @@ WSGI_APPLICATION = 'casamento.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', 'banco2'),
-        'USER': os.environ.get('DB_USER', 'nicolas2'),
-        'PASSWORD': os.environ.get('DB_PASS', 'senha'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': "django.db.backends.postgresql_psycopg2",
+        'HOST': "db.vhluxhpwpzzahpuasyxj.supabase.co",
+        'NAME': "postgres",
+        'USER': "postgres",
+        'PASSWORD': "07ciiJRFe08Wd6Wi",
+        'PORT': "5432",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
