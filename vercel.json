@@ -16,5 +16,7 @@
         "src": "/(.*)",
         "dest": "casamento/wsgi.py"
       }
-    ]
+    ],
+
+    "outputDirectory": "staticfiles_build"
   }
