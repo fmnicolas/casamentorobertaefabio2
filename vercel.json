@@ -18,5 +18,5 @@
       }
     ],
 
-    "outputDirectory": "staticfiles_build"
+    "outputDirectory": "staticfiles"
   }
