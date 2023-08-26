@@ -10,7 +10,7 @@
 
 var Neela;
 
-(function ($) {
+(function initMap($) {
     "use strict";
 
     Neela = {
