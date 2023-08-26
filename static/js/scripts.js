@@ -36,7 +36,7 @@ var Neela;
         mobileMenuTitle: mobile_menu_title,
         onepageNav: onepage_nav,
         rtlFlag: rtl,
-        slidehowImages: slidehow_images,
+        slideshowImages: slideshow_images,
         timelineParallax: timeline_parallax,
 
         init: function () {
