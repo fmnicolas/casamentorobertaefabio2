@@ -3,14 +3,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rvsp.views import index
-from rvsp import websocket_urlpatterns
+from rvsp.consumers import Consumer
+
+websocket_urlpatterns = [
+    path('ws/casamentorobertaefabio2.vercel.app/', Consumer.as_asgi()),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-]
-
-urlpatterns += [
     path('ws/', include(websocket_urlpatterns)),
 ]
 
