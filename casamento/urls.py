@@ -6,7 +6,7 @@ from rvsp.views import index
 from rvsp.consumers import Consumer
 
 websocket_urlpatterns = [
-    path('ws/casamentorobertaefabio2.vercel.app/', Consumer.as_asgi()),
+    path('ws://casamentorobertaefabio2.vercel.app/', Consumer.as_asgi()),
 ]
 
 urlpatterns = [
