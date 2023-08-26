@@ -6,7 +6,7 @@
 */
 
 /*jslint browser:true, devel: true, this: true, long: true, unordered: true */
-/*global google, window, RichMarker, jQuery, mobile_menu_title, hero_full_screen, slidehow_images, timeline_parallax, map_color, map_initial_zoom, map_initial_latitude, map_initial_longitude, use_default_map_style, contact_form_success_msg, contact_form_error_msg, contact_form_recaptcha_error_msg, c_days, c_hours, c_minutes, c_seconds, countdown_end_msg, Waypoint, Freewall, map_markers, lightbox, onepage_nav, rtl, grecaptcha  */
+/*global google, window, RichMarker, jQuery, mobile_menu_title, hero_full_screen, slideshow_images, timeline_parallax, map_color, map_initial_zoom, map_initial_latitude, map_initial_longitude, use_default_map_style, contact_form_success_msg, contact_form_error_msg, contact_form_recaptcha_error_msg, c_days, c_hours, c_minutes, c_seconds, countdown_end_msg, Waypoint, Freewall, map_markers, lightbox, onepage_nav, rtl, grecaptcha  */
 
 var Neela;
 
@@ -598,9 +598,9 @@ var Neela;
         createBackgroundSlideshow: function () {
             var $_self = this;
 
-            if ($(".bg-slideshow").length && $_self.slidehowImages.length) {
+            if ($(".bg-slideshow").length && $_self.slideshowImages.length) {
                 $(".bg-slideshow").zoomSlider({
-                    src: $_self.slidehowImages,
+                    src: $_self.slideshowImages,
                     bullets: false,
                     speed: 10000,
                     switchSpeed: 1000,
