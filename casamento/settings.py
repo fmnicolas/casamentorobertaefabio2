@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'casamento.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql_psycopg2",
-        'HOST': "db.vhluxhpwpzzahpuasyxj.supabase.co",
-        'NAME': "postgres",
-        'USER': "postgres",
-        'PASSWORD': "07ciiJRFe08Wd6Wi",
+        'HOST': "ep-shrill-pine-26887541-pooler.us-east-1.postgres.vercel-storage.com",
+        'NAME': "verceldb",
+        'USER': "default",
+        'PASSWORD': "CJEzaldmsR39",
         'PORT': "5432",
     }
 }
