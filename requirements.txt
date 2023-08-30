@@ -14,7 +14,7 @@ dbus-python==1.2.18
 defer==1.0.6
 distro==1.7.0
 distro-info==1.1+ubuntu1
-Django==4.2.3
+Django==3.2.15
 django-filter==23.2
 djangorestframework==3.14.0
 dnspython==2.2.1
