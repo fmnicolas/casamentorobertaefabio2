@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'casamento',
     'rest_framework',
+    'rvsp',
 ]
 
 MIDDLEWARE = [

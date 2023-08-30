@@ -5,7 +5,7 @@ class Confirmacao(models.Model):
     email = models.EmailField()
     attend = models.IntegerField()
     people_count = models.IntegerField()
-    message = models.CharField()
+    message = models.TextField()
 
     def __str__(self):
         return self.name
