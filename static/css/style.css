@@ -489,7 +489,7 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #3d5963;
+  background-color: #ab9aed;
   z-index: -1;
   -khtml-opacity: 0.8;
   -moz-opacity: 0.8;
@@ -1727,7 +1727,7 @@ p.center {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #ab9aed;
+  background-color: #3d5963;
   z-index: 0;
   -khtml-opacity: 0.8;
   -moz-opacity: 0.8;
