@@ -847,7 +847,7 @@ var Neela;
                 const formData = new FormData(formEl);
                 const data = Object.fromEntries(formData);
 
-                fetch('https://casamentorobertaefabio2.vercel.app/confirmacoes/', {
+                fetch('https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', {
                     method: "POST",
                     headers: {
                       'Content-type': 'application/json'
