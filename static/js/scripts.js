@@ -839,160 +839,25 @@ var Neela;
 
         contactForm: function () {
 
-            var $_self = this;
+            const formEl = document.getElementById('form-rsvp')
 
-            $(".submit_form").on("click", function (e) {
+            formEl.addEventListener('submit', evento=> {
+                evento.preventDefault();
 
-                var $submit_btn = $(this);
-                var $form = $submit_btn.closest("form");
-                var $fields = $("input, textarea, select, fieldset", $form);
-                var len = 0;
-                var re = /\S+@\S+\.\S+/;
-                var html = "contact";
-                var error = false;
-                var showSuccess;
-                var stopSpin;
-                var encodeHtml;
+                const formData = new FormData(formEl);
+                const data = Object.fromEntries(formData);
 
-                e.preventDefault();
-
-                encodeHtml = function (str) {
-                    return encodeURIComponent(str);
-                };
-
-                $submit_btn.width("auto");
-
-                $(".form_status_message").html("");
-
-                $fields.each(function () {
-                    var $field = $(this);
-
-                    if ($field.attr("type") === "hidden") {
-                        if ($field.hasClass("subject")) {
-                            html += "&subject=" + encodeHtml($field.val());
-                        } else if ($field.hasClass("fromName") || $field.hasClass("fromname")) {
-                            html += "&fromname=" + encodeHtml($field.val());
-                        } else if ($field.hasClass("fromEmail") || $field.hasClass("fromemail")) {
-                            html += "&fromemail=" + encodeHtml($field.val());
-                        } else if ($field.hasClass("emailTo") || $field.hasClass("emailto")) {
-                            html += "&emailto=" + encodeHtml($field.val());
-                        }
-                    } else {
-                        if ($field.attr("type") === "checkbox" && $field.parents("fieldset").length === 1 && $field.parents("fieldset").hasClass("required")) {
-                            return;
-                        }
-
-                        if ($field.is("fieldset") && $field.hasClass("required") && $("#" + $field.attr("id") + " input:checkbox:checked").length === 0) {
-                            $("input", $field).addClass("is-invalid");
-                            error = true;
-                        } else if ($field.hasClass("required") && $field.attr("type") === "checkbox" && !$("input[id='" + $field.attr("id") + "']").is(":checked")) {
-                            $field.addClass("is-invalid");
-                            error = true;
-                        } else if ($field.hasClass("required") && $field.val() === "" && $field.attr("type") !== "checkbox" && !$field.is("fieldset")) {
-                            $field.addClass("is-invalid");
-                            error = true;
-                        } else if ($field.hasClass("required") && $field.attr("type") === "radio" && !$("input[name='" + $field.attr("name") + "']").is(":checked")) {
-                            $field.addClass("is-invalid");
-                            error = true;
-                        } else if ($field.attr("type") === "email" && $field.val() !== "" && re.test($field.val()) === false) {
-                            $field.addClass("is-invalid");
-                            error = true;
-                        } else if ($field.attr("id") !== "g-recaptcha-response" && $field.attr("id") !== "recaptcha-token") {
-                            $field.removeClass("is-invalid");
-                            $("input", $field).removeClass("is-invalid");
-
-                            if ($field.hasClass("subject")) {
-                                html += "&subject=" + encodeHtml($field.val());
-                                html += "&subject_label=" + encodeHtml($field.attr("name"));
-                            } else if ($field.hasClass("fromName") || $field.hasClass("fromname")) {
-                                html += "&fromname=" + encodeHtml($field.val());
-                                html += "&fromname_label=" + encodeHtml($field.attr("name"));
-                            } else if ($field.hasClass("fromEmail") || $field.hasClass("fromemail")) {
-                                html += "&fromemail=" + encodeHtml($field.val());
-                                html += "&fromemail_label=" + encodeHtml($field.attr("name"));
-                            } else {
-                                if ($field.attr("type") === "radio") {
-                                    if ($("input[id='" + $field.attr("id") + "']").is(":checked")) {
-                                        html += "&field" + len + "_label=" + encodeHtml($field.attr("name"));
-                                        html += "&field" + len + "_value=" + encodeHtml($.trim($("label[for='" + $field.attr("id") + "']").text()));
-                                    }
-                                } else if ($field.is("fieldset")) {
-                                    html += "&field" + len + "_label=" + encodeHtml($field.attr("name"));
-
-                                    $("#" + $field.attr("id") + " input:checkbox:checked").each(function (index) {
-                                        if (index === 0) {
-                                            html += "&field" + len + "_value=";
-                                            html += encodeHtml($.trim($("label[for='" + $(this).attr("id") + "']").text()));
-                                        } else {
-                                            html += ", " + encodeHtml($.trim($("label[for='" + $(this).attr("id") + "']").text()));
-                                        }
-                                    });
-                                } else {
-                                    html += "&field" + len + "_label=" + encodeHtml($field.attr("name"));
-                                    html += "&field" + len + "_value=" + encodeHtml($field.val());
-                                }
-
-                                len += 1;
-                            }
-                        }
-                    }
-                });
-
-                html += "&len=" + len;
-
-                if ($(".g-recaptcha").length) {
-                    html += "&recaptcha=" + grecaptcha.getResponse();
-                }
-
-                showSuccess = function () {
-                    $(".form_status_message").html("<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">" + $_self.contactFormSuccessMsg + "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>");
-                };
-
-                stopSpin = function () {
-                    $(".fa-spinner", $submit_btn).remove();
-                    $submit_btn.removeClass("disabled");
-                };
-
-                if (!error && !$_self.sendingMail) {
-                    $_self.sendingMail = true;
-
-                    $submit_btn.append("<i class=\"fas fa-spinner fa-spin after\"></i>");
-                    $submit_btn.addClass("disabled");
-
-                    $.ajax({
-                        type: "POST",
-                        url: "contact.php",
-                        data: html,
-                        success: function (msg) {
-                            stopSpin();
-
-                            if (msg === "ok") {
-                                showSuccess();
-                                $form[0].reset();
-                            } else {
-                                $_self.showError($_self.contactFormRecaptchaErrorMsg);
-                            }
-
-                            $_self.sendingMail = false;
-
-                            if ($(".g-recaptcha").length) {
-                                grecaptcha.reset();
-                            }
-                        },
-                        error: function () {
-                            stopSpin();
-
-                            $_self.showError();
-                            $_self.sendingMail = false;
-                        }
-                    });
-
-                } else {
-                    $_self.showError();
-                }
-
-                return false;
-            });
+                fetch('https://casamentorobertaefabio2.vercel.app/confirmacoes/', {
+                    method: "POST",
+                    headers: {
+                      'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                  })
+                    .then((response) => response.json())
+                    .then((json) => console.log(json));
+                })
+            
         },
 
         showError: function (err = "") {
