@@ -4,7 +4,7 @@ class Confirmacao(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=30)
-    attend = models.IntegerField()
+    attend = models.CharField(max_length=5)
     people_count = models.IntegerField()
     message = models.TextField()
 
