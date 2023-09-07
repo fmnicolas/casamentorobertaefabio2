@@ -2755,32 +2755,6 @@ p.center {
   transform: translateX(35%);
 }
 
-.map-responsive{
-
-  overflow:hidden;
-
-  padding-bottom:56.25%;
-
-  position:relative;
-
-  height:0;
-
-}
-
-.map-responsive iframe{
-
-  left:0;
-
-  top:0;
-
-  height:100%;
-
-  width:100%;
-
-  position:absolute;
-
-}
-
 .timeline_footer {
   clear: both;
   position: relative;
@@ -6506,6 +6480,32 @@ textarea.form-control {
   .map-info-container .info-wrapper .location-info h5 {
     font-size: 13pt;
   }
+
+  .map-responsive{
+
+    overflow:hidden;
+
+    padding-bottom:40%;
+
+    position:relative;
+
+    height:0;
+
+}
+
+.map-responsive iframe{
+
+    left:0;
+
+    top:0;
+
+    height:100%;
+
+    width:100%;
+
+    position:absolute;
+
+}
 
   .wedding-gifts li .neela-style {
     padding: 15px;
