@@ -852,7 +852,7 @@ var Neela;
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 
                 xhr.onreadystatechange = function () {
-                    if (xhr.status === 201) {
+                    if (xhr.readyState === 4 && xhr.status === 201) {
                         window.alert('Confirmação enviada com sucesso! :)');
                     }
                     else {
