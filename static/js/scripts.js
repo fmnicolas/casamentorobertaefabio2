@@ -853,12 +853,10 @@ var Neela;
                 
                 xhr.onreadystatechange = function () {
                     if (xhr.status === 201) {
-                        const response = JSON.parse(xhr.responseText);
                         window.alert('Confirmação enviada com sucesso! :)');
                     }
                     else {
-                        const response = JSON.parse(xhr.responseText);
-                        window.alert('Erro' + xhr.status);
+                        window.alert('ERRO! ' + xhr.status);
                     }
                 };
             
