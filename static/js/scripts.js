@@ -852,16 +852,18 @@ var Neela;
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 
                 xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 201) {
-                        window.alert('Confirmação enviada com sucesso! :)');
-                    }
-                    else {
-                        window.alert('ERRO! ' + xhr.status);
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 201) {
+                            window.alert('Confirmação enviada com sucesso!')
+                        } else {
+                            window.alert('Erro! Status: ' + xhr.status);
+                        }
                     }
                 };
             
                 xhr.send(JSON.stringify(data));
             });
+            
             
             
         },
