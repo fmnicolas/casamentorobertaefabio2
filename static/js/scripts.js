@@ -838,25 +838,28 @@ var Neela;
         },
 
         contactForm: function () {
+            
+            const formEl = document.getElementById('form-rsvp');
 
-            const formEl = document.getElementById('form-rsvp')
-
-            formEl.addEventListener('submit', evento=> {
+            formEl.addEventListener('submit', evento => {
                 evento.preventDefault();
-
+            
                 const formData = new FormData(formEl);
                 const data = Object.fromEntries(formData);
-
-                fetch('https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', {
-                    method: "POST",
-                    headers: {
-                      'Content-type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                  })
-                    .then((response) => response.json())
-                    .then((json) => console.log(json));
-                })
+            
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        console.log(response);
+                    }
+                };
+            
+                xhr.send(JSON.stringify(data));
+            });            
             
         },
 
