@@ -854,7 +854,7 @@ var Neela;
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 201) {
                         const response = JSON.parse(xhr.responseText);
-                        console.log(response);
+                        window.alert(response);
                     }
                 };
             
