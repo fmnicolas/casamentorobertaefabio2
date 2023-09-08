@@ -852,9 +852,12 @@ var Neela;
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 
                 xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
+                    if (xhr.status === 201) {
                         const response = JSON.parse(xhr.responseText);
-                        console.log(response);
+                        window.alert(response);}
+                    else {
+                        const response = JSON.parse(xhr.responseText);
+                        window.alert(response);}
                     }
                 };
             
