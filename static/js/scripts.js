@@ -840,7 +840,8 @@ var Neela;
         contactForm: function () {
             
             const formEl = document.getElementById('form-rsvp');
-
+            const emailInput = document.getElementById('email');
+            
             formEl.addEventListener('submit', evento => {
                 evento.preventDefault();
             
@@ -848,22 +849,40 @@ var Neela;
                 const data = Object.fromEntries(formData);
             
                 const xhr = new XMLHttpRequest();
-                xhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.open('POST', '/check_email/', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4) {
-                        if (xhr.status === 201) {
-                            window.alert('Confirmação enviada com sucesso!')
+                        if (xhr.status === 200) {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.exists) {
+                                window.alert('Este email já foi registrado.');
+                            } else {
+                                const submitXhr = new XMLHttpRequest();
+                                submitXhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
+                                submitXhr.setRequestHeader('Content-Type', 'application/json');
+                                
+                                submitXhr.onreadystatechange = function () {
+                                    if (submitXhr.readyState === 4) {
+                                        if (submitXhr.status === 201) {
+                                            window.alert('Confirmação enviada com sucesso!');
+                                        } else {
+                                            window.alert('Erro! Status: ' + submitXhr.status);
+                                        }
+                                    }
+                                };
+                            
+                                submitXhr.send(JSON.stringify(data));
+                            }
                         } else {
                             window.alert('Erro! Status: ' + xhr.status);
                         }
                     }
                 };
             
-                xhr.send(JSON.stringify(data));
+                xhr.send(`email=${data.email}`);
             });
-            
             
             
         },
