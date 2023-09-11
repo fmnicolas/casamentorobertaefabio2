@@ -857,7 +857,9 @@ var Neela;
                             alert('Formulário enviado com sucesso!');
                             formEl.reset();
                         } else if (xhr.status === 400) {
-                            alert('Este email já foi registrado.');
+                            const response = JSON.parse(xhr.responseText);
+                            if (response && response.error === 'email_exists') {
+                                alert('Este email já foi registrado.');
                         } else {
                             alert('Erro! Status: ' + xhr.status);
                         }
