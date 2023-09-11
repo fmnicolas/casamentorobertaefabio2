@@ -838,37 +838,42 @@ var Neela;
         },
 
         contactForm: function () {
-            
             const formEl = document.getElementById('form-rsvp');
-
+        
             formEl.addEventListener('submit', evento => {
                 evento.preventDefault();
-            
+        
                 const formData = new FormData(formEl);
                 const data = Object.fromEntries(formData);
-            
+        
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
-                
+        
                 xhr.onreadystatechange = function () {
-                    if (data.success) {
-                        alert('Formulário enviado com sucesso!');
-                        form.reset();
-                    } else {
-                        alert('Este email já foi registrado.');
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.success) {
+                                alert('Formulário enviado com sucesso!');
+                                formEl.reset();
+                            } else {
+                                alert('Este email já foi registrado.');
+                            }
+                        } else {
+                            alert('Ocorreu um erro ao enviar o formulário.' + xhr.status);
+                        }
                     }
-
                 };
-                
+        
                 xhr.onerror = function () {
                     alert('Ocorreu um erro ao enviar o formulário.');
                 };
-                
+        
                 xhr.send(JSON.stringify(data));
-            });  
-            
+            });
         },
+        
 
         showError: function (err = "") {
             var $_self = this;

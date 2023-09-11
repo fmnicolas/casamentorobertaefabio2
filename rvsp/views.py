@@ -8,7 +8,7 @@ from .serializers import ConfirmacaoSerializer
 def index(request):
     return render(request, 'rvsp/index.html')
 
-def sua_view(request):
+def verificar_email(request):
     if request.method == 'POST':
         form = ConfirmacaoForm(request.POST)
         if form.is_valid():
