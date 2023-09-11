@@ -853,7 +853,7 @@ var Neela;
                 xhr.onreadystatechange = function () {
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 200) {
+                            if (xhr.status === 201) {
                                 const response = JSON.parse(xhr.responseText);
                                 if (response.success) {
                                     alert('Formulário enviado com sucesso!');
