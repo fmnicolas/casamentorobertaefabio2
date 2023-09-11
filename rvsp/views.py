@@ -17,7 +17,8 @@ def verificar_email(request):
     else:
         form = ConfirmacaoForm()
     
-    return render(request, 'index.html', {'form': form})
+    return JsonResponse({'success': False})
+
 
 class ConfirmacaoViewSet(viewsets.ModelViewSet):
     queryset = Confirmacao.objects.all()
