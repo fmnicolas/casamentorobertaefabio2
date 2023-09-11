@@ -838,36 +838,36 @@ var Neela;
         },
 
         contactForm: function () {
+            
             const formEl = document.getElementById('form-rsvp');
-        
+
             formEl.addEventListener('submit', evento => {
                 evento.preventDefault();
-        
+            
                 const formData = new FormData(formEl);
                 const data = Object.fromEntries(formData);
-        
+            
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
-        
+                
                 xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 201) {
-                            alert('Formulário enviado com sucesso!');
-                            formEl.reset();
-                        } else if (xhr.status === 400) {
-                            const response = JSON.parse(xhr.responseText);
-                            if (response && response.error === 'email_exists') {
-                                alert('Este email já foi registrado.');
-                            } else {
-                                alert('Erro! Status: ' + xhr.status);
-                            }
-                        }
+                    if (data.success) {
+                        alert('Formulário enviado com sucesso!');
+                        form.reset();
+                    } else {
+                        alert('Este email já foi registrado.');
                     }
+
                 };
-        
+                
+                xhr.onerror = function () {
+                    alert('Ocorreu um erro ao enviar o formulário.');
+                };
+                
                 xhr.send(JSON.stringify(data));
-            });
+            });  
+            
         },
 
         showError: function (err = "") {
