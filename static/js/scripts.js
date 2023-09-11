@@ -838,19 +838,18 @@ var Neela;
         },
 
         contactForm: function () {
-            
             const formEl = document.getElementById('form-rsvp');
-
+        
             formEl.addEventListener('submit', evento => {
                 evento.preventDefault();
-            
+        
                 const formData = new FormData(formEl);
                 const data = Object.fromEntries(formData);
-            
+        
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
-                
+        
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 201) {
@@ -860,15 +859,15 @@ var Neela;
                             const response = JSON.parse(xhr.responseText);
                             if (response && response.error === 'email_exists') {
                                 alert('Este email já foi registrado.');
-                        } else {
-                            alert('Erro! Status: ' + xhr.status);
+                            } else {
+                                alert('Erro! Status: ' + xhr.status);
+                            }
                         }
                     }
                 };
-
+        
                 xhr.send(JSON.stringify(data));
-            });  
-            
+            });
         },
 
         showError: function (err = "") {
