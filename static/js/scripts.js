@@ -861,19 +861,14 @@ var Neela;
                                 alert('Este email já foi registrado.');
                             }
                         } else {
-                            alert('Ocorreu um erro ao enviar o formulário.' + xhr.status);
+                            alert('Ocorreu um erro ao enviar o formulário.');
                         }
                     }
-                };
-        
-                xhr.onerror = function () {
-                    alert('Ocorreu um erro ao enviar o formulário.');
                 };
         
                 xhr.send(JSON.stringify(data));
             });
         },
-        
 
         showError: function (err = "") {
             var $_self = this;
