@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             numGuestsField.value = '0';
         } else {
             numGuestsField.style.display = 'block';
+            numGuestsField.value = 'Selecione';
         }
     }
 
