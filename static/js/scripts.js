@@ -851,26 +851,24 @@ var Neela;
                 xhr.setRequestHeader('Content-Type', 'application/json');
         
                 xhr.onreadystatechange = function () {
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 201) {
-                                const response = JSON.parse(xhr.responseText);
-                                if (response.success) {
-                                    alert('Formulário enviado com sucesso!');
-                                    formEl.reset();
-                                } else {
-                                    alert('Este email já foi registrado.');
-                                }
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 201) {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.success) {
+                                alert('Formulário enviado com sucesso!');
+                                formEl.reset();
                             } else {
-                                alert('Ocorreu um erro ao enviar o formulário.');
+                                alert('Este email já foi registrado.');
                             }
+                        } else {
+                            alert('Ocorreu um erro ao enviar o formulário.');
                         }
-                    };                    
+                    }
                 };
         
                 xhr.send(JSON.stringify(data));
             });
-        },
+        },        
 
         showError: function (err = "") {
             var $_self = this;

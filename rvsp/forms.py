@@ -1,5 +1,6 @@
 from django import forms
 from .models import Confirmacao
+from django.core.exceptions import ValidationError
 
 class ConfirmacaoForm(forms.ModelForm):
     class Meta:
@@ -9,5 +10,5 @@ class ConfirmacaoForm(forms.ModelForm):
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if Confirmacao.objects.filter(email=email).exists():
-            raise forms.ValidationError("Este email já foi registrado.")
+            raise ValidationError("Este email já foi registrado.")
         return email
