@@ -18,10 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function toggleNumGuestsField() {
         if (attendNoRadio.checked) {
             numGuestsField.style.display = 'none';
-            numGuestsField.disabled = true;
+            numGuestsField.value = '0';
         } else {
             numGuestsField.style.display = 'block';
-            numGuestsField.disabled = false;
         }
     }
 
