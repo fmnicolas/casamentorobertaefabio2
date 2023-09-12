@@ -853,9 +853,11 @@ var Neela;
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 201) {
-                            alert('Formulário enviado com sucesso!');
+                            alert('Formulário enviado com sucesso! :)');
+                        } else if (xhr.status == 400) {
+                            alert('E-mail já cadastrado!')
                         } else {
-                            alert('Erro! ' + xhr.status)
+                            alert('Erro!' + xhr.status +  ':(')
                         }
                     }
                 };

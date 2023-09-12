@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 class ConfirmacaoForm(forms.ModelForm):
     class Meta:
         model = Confirmacao
-        fields = ['id', 'name', 'email', 'phone', 'attend', 'people_count', 'message']
+        fields = ['name', 'email', 'phone', 'attend', 'people_count', 'message']
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
