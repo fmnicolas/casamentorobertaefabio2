@@ -853,16 +853,9 @@ var Neela;
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 201) {
-                            const response = JSON.parse(xhr.responseText);
-                            if (response.success) {
-                                alert('Formulário enviado com sucesso!');
-                                formEl.reset();
-                            } else {
-                                alert('Este email já foi registrado.');
-                            }
+                            alert('Formulário enviado com sucesso!');
                         } else {
-                            alert('Ocorreu um erro ao enviar o formulário.');
-                        }
+                            alert('Erro! ' + xhr.status)
                     }
                 };
         
