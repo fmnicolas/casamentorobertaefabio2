@@ -10,6 +10,25 @@
 
 var Neela;
 
+document.addEventListener('DOMContentLoaded', function () {
+    var attendYesRadio = document.getElementById('attend_wedding_yes');
+    var attendNoRadio = document.getElementById('attend_wedding_no');
+    var numGuestsField = document.getElementById('num_guests');
+
+    function toggleNumGuestsField() {
+        if (attendNoRadio.checked) {
+            numGuestsField.style.display = 'none';
+        } else {
+            numGuestsField.style.display = 'block';
+        }
+    }
+
+    attendYesRadio.addEventListener('change', toggleNumGuestsField);
+    attendNoRadio.addEventListener('change', toggleNumGuestsField);
+
+    toggleNumGuestsField();
+});
+
 (function initMap($) {
     "use strict";
 
@@ -857,7 +876,7 @@ var Neela;
                         } else if (xhr.status == 400) {
                             alert('E-mail já cadastrado!')
                         } else {
-                            alert('Erro!' + xhr.status +  ':(')
+                            alert('ERRO: ' + xhr.status)
                         }
                     }
                 };
