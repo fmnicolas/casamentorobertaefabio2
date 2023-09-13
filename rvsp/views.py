@@ -13,7 +13,6 @@ def verificar_email(request):
         form = ConfirmacaoForm(request.POST)
         if form.is_valid():
             form.save()
-            form = ConfirmacaoForm()
             return JsonResponse({'success': True})
     else:
         form = ConfirmacaoForm()

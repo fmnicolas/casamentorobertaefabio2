@@ -870,6 +870,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
+                document.body.style.cursor = "wait";
         
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -882,7 +883,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                 };
-        
+                document.body.style.cursor = "pointer";
                 xhr.send(JSON.stringify(data));
             });
         },        
