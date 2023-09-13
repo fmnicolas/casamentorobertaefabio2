@@ -834,8 +834,11 @@
 						<div class="form-wrapper flowers neela-style">
 							<h1 class="section-title">Você irá comparecer?</h1>
 							
-							<form id="form-rsvp" method="post" action="#">
+							<form id="form-rsvp" method="post" action="{% url 'verificar_email' %}">
 								
+								{% csrf_token %}
+								{{ form.as_p }}
+
 								<div class="form-floating">
 									<input type="text" name="name" id="name" placeholder="Your Name*" class="form-control required fromName" required>
 									<label for="name">Seu nome*</label>
