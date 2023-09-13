@@ -834,7 +834,7 @@
 						<div class="form-wrapper flowers neela-style">
 							<h1 class="section-title">Você irá comparecer?</h1>
 							
-							<form id="form-rsvp" method="post" action="{% url 'verificar_email' %}">
+							<form id="form-rsvp" method="post" action="#">
 								
 								{% csrf_token %}
 								{{ form.as_p }}
