@@ -863,9 +863,9 @@ document.addEventListener('DOMContentLoaded', function () {
         
             formEl.addEventListener('submit', evento => {
                 evento.preventDefault();
-        
+                
                 document.body.style.cursor = "wait";
-        
+
                 const formData = new FormData(formEl);
                 const data = Object.fromEntries(formData);
         
@@ -875,23 +875,22 @@ document.addEventListener('DOMContentLoaded', function () {
         
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
+
                         document.body.style.cursor = "pointer";
-        
+
                         if (xhr.status === 201) {
                             alert('Formulário enviado com sucesso! :)');
-                        } else if (xhr.status === 400) {
+                            formEl.reset();
+                        } else if (xhr.status == 400) {
                             alert('E-mail já cadastrado!')
                         } else {
                             alert('ERRO: ' + xhr.status)
                         }
                     }
                 };
-        
-                setTimeout(() => {
-                    xhr.send(JSON.stringify(data));
-                }, 2000);
+                xhr.send(JSON.stringify(data));
             });
-        },   
+        },    
 
         showError: function (err = "") {
             var $_self = this;
