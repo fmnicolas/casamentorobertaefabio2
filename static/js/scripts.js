@@ -863,17 +863,21 @@ document.addEventListener('DOMContentLoaded', function () {
         
             formEl.addEventListener('submit', evento => {
                 evento.preventDefault();
-        
+                
+                document.body.style.cursor = "wait";
+
                 const formData = new FormData(formEl);
                 const data = Object.fromEntries(formData);
         
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', 'https://casamentorobertaefabio2.vercel.app/confirmacoes/?format=json', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
-                document.body.style.cursor = "wait";
         
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
+
+                        document.body.style.cursor = "pointer";
+
                         if (xhr.status === 201) {
                             alert('Formulário enviado com sucesso! :)');
                         } else if (xhr.status == 400) {
