@@ -889,7 +889,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
                 setTimeout(() => {
                     xhr.send(JSON.stringify(data));
-                }, 100);
+                }, 2000);
             });
         },   
 
