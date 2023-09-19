@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'casamento',
     'rest_framework',
     'rvsp',
+    'import_export',
 ]
 
 MIDDLEWARE = [
