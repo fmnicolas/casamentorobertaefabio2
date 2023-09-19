@@ -27,7 +27,7 @@ SECRET_KEY = 'gewhufiwjeufkrh97whuejf$%*()671892e4981hh8rjpf19'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'casamentorobertaefabio.com']
 
 
 # Application definition
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'casamento.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql_psycopg2",
-        'HOST': "ep-withered-bonus-75499668-pooler.us-east-1.postgres.vercel-storage.com",
+        'HOST': "ep-shrill-pine-26887541-pooler.us-east-1.postgres.vercel-storage.com",
         'NAME': "verceldb",
         'USER': "default",
-        'PASSWORD': "urybjACd1Hn6",
+        'PASSWORD': "CJEzaldmsR39",
         'PORT': "5432",
     }
 }
